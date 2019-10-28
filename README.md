@@ -246,6 +246,19 @@ Accept: application/json
 Authorization: Bearer xxxxxxxxx
 ```
 
+Body
+```
+{
+	"schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
+	"id": "external_id",
+	"displayName": "Group name",
+	"members": [],
+	"meta": {
+		"resourceType": "Group"
+	}
+}
+```
+
 #### PATCH /Groups/{id}
 Updates an existing group resource, allowing individual (or groups of) users to be added or removed from the group with a single operation.
 
@@ -266,6 +279,22 @@ PATCH /scim/tenants/1/v2/Groups/3 HTTP/1.1
 Host: api.cinode.app
 Accept: application/json
 Authorization: Bearer xxxxxxxxx
+```
+
+Body
+```
+{
+    "schemas": [
+        "urn:ietf:params:scim:api:messages: 2.0:PatchOp"
+    ],
+    "Operations": [
+        {
+            "op": "Replace",
+            "path": "displayName",
+            "value": "New group name"
+        }
+    ]
+}
 ```
 
 #### PUT /Groups/{id}
