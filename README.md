@@ -61,7 +61,6 @@ Authorization: Bearer xxxxxxxxx
 | Email         | `userName` | Singular | Yes | Yes |
 | FirstName | `name.givenName` | Singular | Yes | No |
 | LastName | `name.familyName` | Singular | Yes | No |
-| Title | `title`   | Singular | No | No |
 | ObjectIdentifier | `externalId` | Singular | No | Yes |
 | CompanyUserId | `id` | Singular | Yes | Yes | Yes |
 
@@ -358,7 +357,6 @@ You need to set up mappings in the Gallery app for it to work with our SCIM API 
 | userPrincipalName | `userName` | 1|
 | Switch([IsSoftDeleted], , "False", "True", "True", "False") | `active`||
 | displayName | `displayName` | | 
-| jobTitle | `title` ||
 | givenName | `name.givenName`| |
 | surname | `name.familyName` | |
 | Join(" ", [givenName], [surname]) | `name.formatted` | |
