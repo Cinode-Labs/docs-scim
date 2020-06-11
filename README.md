@@ -367,7 +367,7 @@ You need to set up mappings in the Gallery app for it to work with our SCIM API 
 | Azure Active Directory Attribute | SCIM Attribute |  Matching precedence|
 | ------------- |:-------------|:-------------|
 | displayName | `displayName` | | 
-| objectId | `id` || 
+| objectId | `externalId` || 
 | members | `members` ||
 
 ## Limitations
