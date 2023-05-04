@@ -362,6 +362,20 @@ You need to set up mappings in the Gallery app for it to work with our SCIM API 
 | Join(" ", [givenName], [surname]) | `name.formatted` | |
 | objectId | `externalId` | |
 
+##### Extensions
+In order to use extensions with SCIM, attribute mappings needs to be added.
+In Azure portal go to the `Provisioning` page for the Cinode enterprise app, then click on `Edit provisioning` -> Expand `Mappings` -> Click on `Provision Azure Active Directory Users` -> Check `Show advanced options` -> Click on `Edit attribute list for Cinode` add the following and then press save.
+
+| Name | Type|
+| ------------- |:-------------|
+| urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:EmployeeNumber | string|
+| urn:ietf:params:scim:schemas:extension:Cinode:User:1.0:EmploymentStartDate | DateTime|
+
+On the `Attribute Mapping` page click on `Add new mapping` and select the `Source attribute` and the `Target attribute`, make any additional configuration and press OK.
+
+In order for this to work the mappings must be enabled in Cinode under
+`Administration` -> `Integrations` -> `User provisoning` -> `Attribute mappings`
+
 #### Group
 
 | Azure Active Directory Attribute | SCIM Attribute |  Matching precedence|
